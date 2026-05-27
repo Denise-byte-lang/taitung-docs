@@ -787,7 +787,7 @@
         </tr>
         <tr>
           <td>付款方式</td>
-          <td><strong>匯款預付</strong>（需事先付款才能保留座位）</td>
+          <td><strong>匯款預付/現金預付</strong>（需事先付款才能保留座位）</td>
         </tr>
         <tr>
           <td>戶名</td>
@@ -847,6 +847,10 @@
             <input type="number" name="count" placeholder="請填入人數" min="1" required>
           </div>
           <div class="field">
+            <label>付款方式<span class="req">*</span></label>
+            <input type="number" name="amount" placeholder="匯款預付or現金預付）" min="250" step="250" required>
+          </div>
+          <div class="field">
             <label>匯款金額（元）<span class="req">*</span></label>
             <input type="number" name="amount" placeholder="例：500（2人×250）" min="250" step="250" required>
           </div>
@@ -895,6 +899,10 @@
           <div class="field">
             <label>報名人數 <span class="req">*</span></label>
             <input type="number" name="count" placeholder="請填入人數" min="1" required>
+          </div>
+          <div class="field">
+               <label>付款方式<span class="req">*</span></label>
+            <input type="number" name="amount" placeholder="匯款預付or現金預付）" min="250" step="250" required>
           </div>
           <div class="field">
             <label>匯款金額（元）<span class="req">*</span></label>
