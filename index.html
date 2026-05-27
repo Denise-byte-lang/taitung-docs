@@ -847,8 +847,12 @@
             <input type="number" name="count" placeholder="請填入人數" min="1" required>
           </div>
           <div class="field">
-            <label>付款方式<span class="req">*</span></label>
-            <input type="number" name="amount" placeholder="匯款預付or現金預付" required>
+        <label>付款方式<span class="req">*</span></label>
+            <select name="source" required>
+              <option value="">請選擇</option>
+              <option value="匯款預付">匯款預付</option>
+              <option value="現金預付">現金預付</option>
+               </select>
           </div>
           <div class="field">
             <label>匯款金額（元）<span class="req">*</span></label>
@@ -902,7 +906,11 @@
           </div>
           <div class="field">
                <label>付款方式<span class="req">*</span></label>
-            <input type="number" name="amount" placeholder="匯款預付or現金預付" required>
+            <select name="source" required>
+              <option value="">請選擇</option>
+              <option value="匯款預付">匯款預付</option>
+              <option value="現金預付">現金預付</option>
+               </select>
           </div>
           <div class="field">
             <label>匯款金額（元）<span class="req">*</span></label>
