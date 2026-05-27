@@ -816,8 +816,7 @@
   <h2 class="section-title">選擇場次，立即報名</h2>
 
   <div class="setup-banner" id="setup-notice">
-    ⚙️ <strong>管理員設定提示</strong>：請先完成 Google Apps Script 部署，再將產生的 Web App URL 填入下方兩個表單的 <code>SCRIPT_URL</code> 變數中。
-    部署方式請見頁底說明。設定完成後可刪除此提示框。
+  
   </div>
 
   <div class="form-panels">
@@ -949,33 +948,10 @@
   </p>
 
   <p style="margin-top:1.5rem; font-size:0.72rem; color:#5A5448; letter-spacing:0.05em;">
-    ── Google Apps Script 後台設定說明 ──<br>
+   
     前往 <a href="https://script.google.com" target="_blank">script.google.com</a> 新增專案，貼入以下程式碼，部署為 Web 應用程式（執行身分：我，存取：所有人），將產生的網址貼入本頁 JS 的 SCRIPT_URL 變數。
   </p>
-  <pre style="text-align:left; background:#111008; border:1px solid #2A2620; border-radius:4px; padding:1.2rem; margin:1rem auto; max-width:680px; font-size:0.72rem; color:#8A8070; overflow-x:auto; line-height:1.6;">
-// Google Apps Script — 貼入 script.google.com
-// 需建立兩個 Sheet，命名為「傳奇女伶」與「甘露水」
-
-const SHEET_ID = '你的_GOOGLE_SPREADSHEET_ID';
-
-function doPost(e) {
-  const data = JSON.parse(e.postData.contents);
-  const ss = SpreadsheetApp.openById(SHEET_ID);
-  const sheetName = data.film;
-  let sheet = ss.getSheetByName(sheetName);
-  if (!sheet) {
-    sheet = ss.insertSheet(sheetName);
-    sheet.appendRow(['時間戳記','姓名','電話','人數','匯款金額','帳號末四碼','消息來源']);
-  }
-  sheet.appendRow([
-    new Date(),
-    data.name, data.phone, data.count,
-    data.amount, data.last4, data.source
-  ]);
-  return ContentService
-    .createTextOutput(JSON.stringify({status:'ok'}))
-    .setMimeType(ContentService.MimeType.JSON);
-}
+  
   </pre>
 </footer>
 
